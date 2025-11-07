@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protei Visual Building Blocks</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .demo-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .demo-section:hover {
+            transform: translateY(-5px);
+        }
+        
+        .section-title {
+            color: #4a5568;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .component-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .component-card:hover {
+            border-color: #667eea;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+            transition: background 0.3s ease;
+        }
+        
+        .feature-list li:hover {
+            background: #f7fafc;
+            padding-left: 10px;
+        }
+        
+        .feature-list li:before {
+            content: "✓";
+            color: #48bb78;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #4299e1, #3182ce);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: scale(1.1);
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .demo-section {
+                padding: 20px;
+            }
+            
+            .component-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Protei Visual Building Blocks</h1>
+            <p class="subtitle">JavaScript, Node.js, Next.js, React Components for Project Protei</p>
+        </header>
+        
+        <div class="demo-section">
+            <h2 class="section-title">Repository Overview</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">0</div>
+                    <div>Stars</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">0</div>
+                    <div>Forks</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">JS</div>
+                    <div>Language</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2025</div>
+                    <div>Created</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="demo-section">
+            <h2 class="section-title">Available Components</h2>
+            <div class="component-grid">
+                <div class="component-card" onclick="showComponent('react')">
+                    <h3>React Components</h3>
+                    <p>Modern React building blocks for interactive UIs</p>
+                </div>
+                <div class="component-card" onclick="showComponent('nextjs')">
+                    <h3>Next.js Modules</h3>
+                    <p>Server-side rendered components and pages</p>
+                </div>
+                <div class="component-card" onclick="showComponent('nodejs')">
+                    <h3>Node.js Utilities</h3>
+                    <p>Backend processing and API utilities</p>
+                </div>
+                <div class="component-card" onclick="showComponent('vanilla')">
+                    <h3>Vanilla JavaScript</h3>
+                    <p>Pure JavaScript components without frameworks</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="demo-section">
+            <h2 class="section-title">Installation & Usage</h2>
+            <div class="code-block">
+# Clone the repository
+git clone https://github.com/Starframes98866/protei-visual-building-blocks.git
+
+# Navigate to project directory
+cd protei-visual-building-blocks
+
+# Install dependencies
+npm install
+            </div>
+            
+            <h3>Features</h3>
+            <ul class="feature-list">
+                <li>Modular visual components</li>
+                <li>Cross-framework compatibility</li>
+                <li>Responsive design patterns</li>
+                <li>Easy integration</li>
+                <li>Customizable styling</li>
+            </ul>
+        </div>
+        
+        <div class="demo-section">
+            <h2 class="section-title">Interactive Demo</h2>
+            <div style="text-align: center;">
+                <button class="btn" onclick="toggleDemo()">Toggle Component Demo</button>
+                <button class="btn" onclick="changeTheme()">Change Theme</button>
+                <button class="btn" onclick="showCode()">View Source Code</button>
+            </div>
+            <div id="demo-area" style="margin-top: 20px; padding: 20px; background: #f8f9fa; border-radius: 10px; display: none;">
+                <p>Demo component loaded! This showcases the interactive capabilities of Protei visual building blocks.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showComponent(type) {
+            alert(`Loading ${type} components from Protei Visual Building Blocks repository!`);
+        }
+        
+        function toggleDemo() {
+            const demoArea = document.getElementById('demo-area');
+            demoArea.style.display = demoArea.style.display === 'none' ? 'block' : 'none';
+        }
+        
+        function changeTheme() {
+            document.body.style.background = document.body.style.background.includes('667eea') ? 
+                'linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%)' : 
+                'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+        }
+        
+        function showCode() {
+            window.open('https://github.com/Starframes98866/protei-visual-building-blocks', '_blank');
+        }
+        
+        // Add smooth scrolling and animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.demo-section');
+            sections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    section.style.transition = 'all 0.6s ease';
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>
